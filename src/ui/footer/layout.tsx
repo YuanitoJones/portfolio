@@ -1,20 +1,18 @@
 import { socialMedia } from "../../const/socialMediaLinks";
-import { Button } from "@nextui-org/react";
+import "../../app/globals.css";
 
 const Footer = () => {
   return (
-    <footer className="footerContainer">
-      <div>
+    <footer>
+      <div className="p-2 bg-steelblue-400">
         <h1>Mis redes sociales</h1>
-        <div className="socialMediaList">
-          {Object.keys(socialMedia).map((link: string) => {
-            return (
-              <div key={link} className="socialMediaElement">
-                <p>{link}:</p>
-                <span>{socialMedia[link]}</span>
-              </div>
-            );
-          })}
+        <div>
+          {Object.keys(socialMedia).map((link) => (
+            <div key={link} className="p-3">
+              <p className="text-pretty">{link}:</p>
+              <span className="text-red-100">{socialMedia[link]}</span>
+            </div>
+          ))}
         </div>
       </div>
     </footer>
